@@ -10,5 +10,13 @@ export default class Weather {
 
     this.city = data.name
     this.kelvin = data.main.temp
+    this.temp = Math.round((this.kelvin - 273.15) * 9 / 5 + 32)
+  }
+
+  get template() {
+    return `
+    <h4>${this.temp}&#8457</h4>
+    <h6>${this.city}</h6>
+    `
   }
 }
