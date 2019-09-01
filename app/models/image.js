@@ -1,10 +1,12 @@
-export default class Image {
+
+
+export default class img {
   constructor(data) {
     this.url = data.url
+
   }
 
   template() {
-    return "${this.url}"
+    return `${this.url}`
   }
 }
-// document.getElementById('bg-image').style.backgroundImage =

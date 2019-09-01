@@ -1,3 +1,6 @@
+import img from "../models/image.js"
+
+
 // @ts-ignore
 const imgApi = axios.create({
 	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
@@ -19,7 +22,12 @@ function _setState(prop, data) {
 
 //TODO create methods to retrieve data trigger the update window when it is complete
 export default class ImageService {
-	get Image() {
+
+	constructor() {
+
+	}
+
+	get Img() {
 		return _state.image
 	}
 
@@ -27,8 +35,7 @@ export default class ImageService {
 		_subscribers[prop].push(fn)
 	}
 	getImage() {
-		imgApi.get()
-			.then(res =>
-				_setState('image', new Image(res.data)))
+		imgApi.get().then(res => _setState('image', new img(res.data)))
+
 	}
 }
