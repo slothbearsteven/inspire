@@ -33,16 +33,25 @@ export default class TodoService {
 		_subscribers[prop].push(fn)
 	}
 
+	// getTodos() {
+	// 	console.log("Getting the Todo List")
+	// 	todoApi.get()
+	// 		.then(res => {
+	// 			//TODO Handle this response from the server
+	// 			let data = res.data.data.map(t => new todo(t))
+	// 			_setState('todos', data)
+	// 		})
+	// 		.catch(err => _setState('error', err.response.data))
+	// }
 	getTodos() {
-		console.log("Getting the Todo List")
-		todoApi.get()
-			.then(res => {
-				//TODO Handle this response from the server
-				let data = res.data.data.map(t => new todo(t))
-				_setState('todos', data)
-			})
+		console.log('Searching the books')
+		todoApi.get().then(res => {
+			let data = res.data.data.map(t => new todo(t))
+			_setState("todos", data)
+		})
 			.catch(err => _setState('error', err.response.data))
 	}
+
 
 	addTodo(todo) {
 		todoApi.post('', todo)
@@ -76,7 +85,6 @@ export default class TodoService {
 		//		once the response comes back, what do you need to insure happens?
 		let todo = _state.todos.find(todo => todo._id == todoId)
 		todoApi.delete(todo)
-
 			.then(res => {
 				this.getTodos()
 			})
