@@ -1,8 +1,9 @@
 //NOTE your service is all set up for the observer pattern but there is still work to be done
+import todo from "../models/todo.js"
 
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/slothbear/todos/',
 	timeout: 3000
 });
 
@@ -34,6 +35,7 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
+				_setState('todos', res.data.data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -42,6 +44,7 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -63,6 +66,7 @@ export default class TodoService {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
+
 	}
 
 }
