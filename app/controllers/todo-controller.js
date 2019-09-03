@@ -9,7 +9,7 @@ function _drawTodos() {
 
 	todos.forEach(t => {
 		template += `  <li>${this.description}<br>
-    <button class="btn btn-dark" onclick="">Complete</button><button class="btn btn-danger" onclick="">delete</button>`
+    <button class="btn btn-dark" onclick="app.controllers.todoController.toggleTodoStatus(todoId)">Toggle Completed</button><button class="btn btn-danger" onclick="app.controllers.todoController.removeTodo(todoId) ">Delete</button>`
 
 		if (this.completed == true) {
 			template += `<p>Task Completed!</p>`

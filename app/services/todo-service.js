@@ -68,7 +68,12 @@ export default class TodoService {
 		//TODO Make sure that you found a todo, 
 		//		and if you did find one
 		//		change its completed status to whatever it is not (ex: false => true or true => false)
-		todo.completed = true
+		if (todo.completed == false) {
+			todo.completed = true
+		}
+		else {
+			todo.completed = false
+		}
 
 		todoApi.put(todoId, todo)
 			.then(res => {
