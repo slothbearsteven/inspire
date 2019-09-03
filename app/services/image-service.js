@@ -35,7 +35,9 @@ export default class ImageService {
 		_subscribers[prop].push(fn)
 	}
 	getImage() {
-		imgApi.get().then(res => _setState('image', new img(res.data)))
-
+		imgApi.get()
+			.then(res => { _setState('image', new img(res.data)) }
+			)
 	}
+
 }

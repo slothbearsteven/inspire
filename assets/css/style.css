@@ -1,3 +1,8 @@
+*{
+  color: white;
+  text-shadow: 2px 0px 4px black, -2px 0px 4px black;
+}
+
 #todo-error{
   color: red;
   font-size: 2em;
@@ -11,4 +16,9 @@ font-weight: bold;
 #time{
   font-size: xx-large;
   font-weight: bolder;
+}
+
+#bg-image{
+  background-size: cover;
+  background-repeat: no-repeat;
 }
