@@ -6,31 +6,61 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Inspire</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>s
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="bg-image">
-	<div id="weather">
-		Your Weather Template
-	</div>
-
-	<div id="quote">
-		The Quote
-	</div>
-
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit="app.controllers.todoController.addTodo(event)">
-			<div class="form-group">
-				<label for="description"> What To do?</label>
-				<textarea class="form-control" id="description" name="description" rows="3"></textarea>
+	<div class="container-fluid">
+		<div class="row text-center">
+			<div class="col-1">
+				<div id="weather">
+					Your Weather Template
+				</div>
+				<h1 id="time"></h1>
 			</div>
-			<button type="submit" class="btn btn-dark">Add Todo</button>
-		</form>
-		<div id="todos"></div>
-	</div>
+			<div class="col-4 offset-7 text-center">
+				<div>
+					A Todo List
+					<div id="todo-error"></div>
+					<form onsubmit="app.controllers.todoController.addTodo(event)">
+						<div class="form-group">
+							<label for="description"> What To do?</label>
+							<textarea class="form-control" id="description" name="description" rows="3"></textarea>
+						</div>
+						<button type="submit" class="btn btn-dark">Add Todo</button>
+					</form>
+					<div id="todos"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row text-center justify-content-center">
+			<div class="col-12"><br>
+				<br>
+				<br>
+				<br><br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+
+				<div id="quote">
+					The Quote
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
 </body>

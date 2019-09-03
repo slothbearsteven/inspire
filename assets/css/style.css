@@ -3,3 +3,12 @@
   font-size: 2em;
 }
 
+.weather{
+font-size: x-large;
+font-weight: bold;
+}
+
+#time{
+  font-size: xx-large;
+  font-weight: bolder;
+}

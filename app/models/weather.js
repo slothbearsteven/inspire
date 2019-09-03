@@ -15,8 +15,8 @@ export default class Weather {
 
   get template() {
     return `
-    <h4>${this.temp}&#8457</h4>
-    <h6>${this.city}</h6>
+    <p class='weather'>${this.temp}&#8457</p>
+    <p>${this.city}</p>
     `
   }
 }
